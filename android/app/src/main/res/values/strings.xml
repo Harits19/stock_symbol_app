@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Stock Symbol App</string>
+    <string name="facebook_app_id">626520311902990</string>
+    <string name="fb_login_protocol_scheme">fb626520311902990</string>
+    <string name="facebook_client_token">b9b9eeeb1c0971550e9c20d0eb212a0b</string>
+</resources>
