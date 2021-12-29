@@ -19,6 +19,4 @@ pushReplace(BuildContext context, Widget widget) {
   );
 }
 
-String dateTimeToString(DateTime dateTime) {
-  return DateFormat("dd MMMM yyyy hh:mm:ss").format(dateTime);
-}
+final dateTimeFormat = DateFormat("dd MMMM yyyy hh:mm:ss");

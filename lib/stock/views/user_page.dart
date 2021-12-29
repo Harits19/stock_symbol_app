@@ -39,7 +39,7 @@ class _UserPageState extends State<UserPage> {
                     Text(" : ${loginWatch.facebookUserData?.id} "),
                     Text(" : ${loginWatch.facebookUserData?.email} "),
                     Text(
-                        " : ${(loginWatch.lastLogin == null) ? "" : dateTimeToString(
+                        " : ${(loginWatch.lastLogin == null) ? "" : dateTimeFormat.format(
                             loginWatch.lastLogin!,
                           )} "),
                   ],

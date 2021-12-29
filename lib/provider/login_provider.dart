@@ -37,6 +37,23 @@ class LoginProvider extends ChangeNotifier {
     await pref.setString(KeyCons.tokenKey, token);
     await pref.setString(
         KeyCons.facebookUserDataKey, jsonEncode(facebookUserData!.toJson()));
-    await pref.setString(KeyCons.lastLoginKey, dateTimeToString(lastLogin!));
+    await pref.setString(
+        KeyCons.lastLoginKey, dateTimeFormat.format(lastLogin!));
+  }
+
+  getFromStorage() async {
+    final pref = await SharedPreferences.getInstance();
+
+    token = pref.getString(KeyCons.tokenKey) ?? "";
+    facebookUserData = FacebookUserData.fromJson(
+        jsonDecode(pref.getString(KeyCons.facebookUserDataKey) ?? ""));
+    lastLogin =
+        dateTimeFormat.parse(pref.getString(KeyCons.lastLoginKey) ?? "");
+    print({
+      token,
+      "${facebookUserData?.email}",
+      lastLogin,
+    });
+    notifyListeners();
   }
 }
