@@ -1,11 +1,13 @@
 import 'dart:convert';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:stock_symbol_app/base/base_constanta.dart';
 import 'package:stock_symbol_app/base/base_function.dart';
 import 'package:stock_symbol_app/stock/models/facebook_user_data.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 
 class LoginProvider extends ChangeNotifier {
   FacebookUserData? facebookUserData;
@@ -25,7 +27,6 @@ class LoginProvider extends ChangeNotifier {
       lastLogin = DateTime.now();
 
       await saveToStorage();
-
       onSuccess();
     } else {}
     notifyListeners();
@@ -55,5 +56,21 @@ class LoginProvider extends ChangeNotifier {
       lastLogin,
     });
     notifyListeners();
+  }
+
+  signInWithToken({
+    required VoidCallback onSuccess,
+    required VoidCallback onError,
+  }) async {
+    if (token.isEmpty) return;
+    final facebookAuthCredential = FacebookAuthProvider.credential(token);
+    final userCredential = await FirebaseAuth.instance
+        .signInWithCredential(facebookAuthCredential);
+    if (FirebaseAuth.instance.currentUser == null) {
+      onError();
+      return;
+    }
+    ;
+    onSuccess();
   }
 }

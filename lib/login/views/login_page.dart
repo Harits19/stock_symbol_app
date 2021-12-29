@@ -31,8 +31,16 @@ class _LoginPageState extends State<LoginPage> {
     );
     final loginRead = context.read<LoginProvider>();
     await loginRead.getFromStorage();
-    Navigator.pop(context);
-    toNextPage();
+    await loginRead.signInWithToken(
+      onSuccess: () {
+        Navigator.pop(context);
+        toNextPage();
+        return;
+      },
+      onError: () {
+        Navigator.pop(context);
+      },
+    );
   }
 
   toNextPage() {
