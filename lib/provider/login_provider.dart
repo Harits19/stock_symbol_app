@@ -66,11 +66,10 @@ class LoginProvider extends ChangeNotifier {
     final facebookAuthCredential = FacebookAuthProvider.credential(token);
     final userCredential = await FirebaseAuth.instance
         .signInWithCredential(facebookAuthCredential);
-    if (FirebaseAuth.instance.currentUser == null) {
+    if (userCredential.user == null) {
       onError();
       return;
     }
-    ;
     onSuccess();
   }
 }
