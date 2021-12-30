@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stock_symbol_app/repos/stock_repo.dart';
-import 'package:stock_symbol_app/stock/models/stock.dart';
+import 'package:stock_symbol_app/models/stock.dart';
 
 class StockProvider extends ChangeNotifier {
   List<Stock> listStock = [];

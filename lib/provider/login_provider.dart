@@ -6,8 +6,7 @@ import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:stock_symbol_app/base/base_constanta.dart';
 import 'package:stock_symbol_app/base/base_function.dart';
-import 'package:stock_symbol_app/stock/models/facebook_user_data.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+import 'package:stock_symbol_app/models/facebook_user_data.dart';
 
 class LoginProvider extends ChangeNotifier {
   FacebookUserData? facebookUserData;
@@ -50,11 +49,6 @@ class LoginProvider extends ChangeNotifier {
         jsonDecode(pref.getString(KeyCons.facebookUserDataKey) ?? ""));
     lastLogin =
         dateTimeFormat.parse(pref.getString(KeyCons.lastLoginKey) ?? "");
-    print({
-      token,
-      "${facebookUserData?.email}",
-      lastLogin,
-    });
     notifyListeners();
   }
 

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:stock_symbol_app/base/base_function.dart';
-import 'package:stock_symbol_app/base/circular_view.dart';
+import 'package:stock_symbol_app/ui/views/circular_view.dart';
+import 'package:stock_symbol_app/ui/stock/main_page.dart';
 import 'package:stock_symbol_app/provider/login_provider.dart';
-import 'package:stock_symbol_app/stock/views/main_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);

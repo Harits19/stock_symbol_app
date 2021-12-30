@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:stock_symbol_app/base/circular_view.dart';
+import 'package:stock_symbol_app/ui/views/circular_view.dart';
+import 'package:stock_symbol_app/ui/stock/views/stock_view.dart';
 import 'package:stock_symbol_app/provider/stock_provider.dart';
-import 'package:stock_symbol_app/stock/models/stock.dart';
-import 'package:stock_symbol_app/stock/views/stock_view.dart';
+import 'package:stock_symbol_app/models/stock.dart';
 
 class StockPage extends StatefulWidget {
   const StockPage({Key? key}) : super(key: key);

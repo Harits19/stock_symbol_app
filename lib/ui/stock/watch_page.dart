@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:stock_symbol_app/ui/stock/views/stock_view.dart';
 import 'package:stock_symbol_app/provider/stock_provider.dart';
-import 'package:stock_symbol_app/stock/views/stock_view.dart';
 
 class WatchPage extends StatefulWidget {
   const WatchPage({Key? key}) : super(key: key);

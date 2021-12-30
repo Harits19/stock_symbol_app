@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:stock_symbol_app/base/base_constanta.dart';
-import 'package:stock_symbol_app/stock/models/stock.dart';
+import 'package:stock_symbol_app/models/stock.dart';
 
 class StockRepo {
   static const _domainName = "https://finnhub.io/api/v1";
@@ -17,11 +17,10 @@ class StockRepo {
             .map((e) => Stock.fromJson(e))
             .toList()
             .cast<Stock>();
-        print(result.toString());
         onSuccess(result);
       }
     } catch (e) {
-      print(e);
+      //
     }
   }
 
@@ -41,12 +40,11 @@ class StockRepo {
             .map((e) => Stock.fromJson(e))
             .toList()
             .cast<Stock>();
-        print(result.toString());
 
         onSuccess(result);
       }
     } catch (e) {
-      print(e);
+      // Î
     }
   }
 }

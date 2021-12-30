@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stock_symbol_app/login/views/login_page.dart';
+import 'package:stock_symbol_app/ui/login/login_page.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
