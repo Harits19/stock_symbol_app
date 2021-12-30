@@ -44,8 +44,8 @@ class LoginProvider extends ChangeNotifier {
 
   getFromStorage() async {
     final pref = await SharedPreferences.getInstance();
-
     token = pref.getString(KeyCons.tokenKey) ?? "";
+    if (token.isEmpty) return;
     facebookUserData = FacebookUserData.fromJson(
         jsonDecode(pref.getString(KeyCons.facebookUserDataKey) ?? ""));
     lastLogin =
@@ -62,7 +62,11 @@ class LoginProvider extends ChangeNotifier {
     required VoidCallback onSuccess,
     required VoidCallback onError,
   }) async {
-    if (token.isEmpty) return;
+    await getFromStorage();
+    if (token.isEmpty) {
+      onError();
+      return;
+    }
     final facebookAuthCredential = FacebookAuthProvider.credential(token);
     final userCredential = await FirebaseAuth.instance
         .signInWithCredential(facebookAuthCredential);

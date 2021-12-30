@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:stock_symbol_app/app.dart';
-import 'package:stock_symbol_app/login/views/login_page.dart';
 import 'package:stock_symbol_app/provider/login_provider.dart';
 import 'package:stock_symbol_app/provider/stock_provider.dart';
 

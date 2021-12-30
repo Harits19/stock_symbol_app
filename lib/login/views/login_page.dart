@@ -30,7 +30,6 @@ class _LoginPageState extends State<LoginPage> {
       },
     );
     final loginRead = context.read<LoginProvider>();
-    await loginRead.getFromStorage();
     await loginRead.signInWithToken(
       onSuccess: () {
         Navigator.pop(context);
@@ -39,6 +38,7 @@ class _LoginPageState extends State<LoginPage> {
       },
       onError: () {
         Navigator.pop(context);
+        return;
       },
     );
   }

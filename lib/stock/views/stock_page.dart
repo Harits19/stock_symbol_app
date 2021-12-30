@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:stock_symbol_app/base/circular_view.dart';
 import 'package:stock_symbol_app/provider/stock_provider.dart';
