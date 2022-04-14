@@ -1,8 +1,8 @@
 # Stock Symbol App
 
-Ini adalah proyek untuk mengikuti proses rekrutmen PT Buka Mitra Indonesia (Bukalapak)
+This is my project for following the recrutment process PT Buka Mitra Indonesia (Bukalapak) using API from https://finnhub.io/api/v1
 
-# Teknologi
+# Technology
 
 - [**dio**](https://pub.dev/packages/dio)
 - [**firebase_auth**](https://pub.dev/packages/firebase_auth)
@@ -15,4 +15,4 @@ Ini adalah proyek untuk mengikuti proses rekrutmen PT Buka Mitra Indonesia (Buka
 
 # Demo
 
-![enter image description here](https://github.com/Harits19/stock_symbol_app/blob/main/demo/demo.gif?raw=true)
+![Demo](https://github.com/Harits19/stock_symbol_app/blob/main/demo/demo.gif?raw=true)
